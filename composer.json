@@ -1,0 +1,15 @@
+{
+    "name": "win/iphone",
+    "autoload": {
+        "psr-4": {
+            "Win\\Iphone\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Thi2erry8",
+            "email": "jonathanaugustin056@gmail.com"
+        }
+    ],
+    "require": {}
+}
