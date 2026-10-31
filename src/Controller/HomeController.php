@@ -7,6 +7,6 @@
            public function index():void{
              
                require dirname(__DIR__, 2) .'/src/Views/home.php';
-
+              
            }
      }
