@@ -11,7 +11,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000,
 );
-camera.position.set(0, 0, 5);
+camera.position.set(0, 0, 10);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -27,15 +27,15 @@ const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
 directionalLight.position.set(5, 5, 5);
 scene.add(directionalLight);
 
-// --- CHARGEMENT DU MODÈLE ---
 const loader = new GLTFLoader();
 
 loader.load(
   "http://localhost/WIN_AN_IPHONE/public/assets/js/iphone-duo-night-sky-rigged.glb",
   (gltf) => {
     const model = gltf.scene;
+
+    model.scale.set(50, 50, 50);
     scene.add(model);
-    console.log("Modèle chargé avec succès !");
   },
   (xhr) => {
     console.log((xhr.loaded / xhr.total) * 100 + "% chargé");
@@ -58,4 +58,12 @@ window.addEventListener("resize", () => {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+const ActionBtn = document.querySelector("#nav_control");
+const Menu = document.querySelector(".menu");
+
+ActionBtn.addEventListener("click", () => {
+  Menu.classList.toggle("hidden");
+  console.log("click");
 });
