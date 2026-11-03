@@ -2,7 +2,12 @@
 
 <body>
     <main>
-        <div id="info">Description</div>
+        <section id="canvas-container">
+            <div class="infos">
+                <p>iPhone Duo</p>
+                <h1>Hello,hello.</h1>
+            </div>
+        </section>
     </main>
 
 </body>
